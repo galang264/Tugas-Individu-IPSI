@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Format Check</title>
+</head>
+<body>
+    <form name="form1" action="#"
+        <input type="text" name="text1" />
+        <input type="submit" name="submit" value="Submit" onclick="validateEmail(document.form1.text1)" />
+    </form>
+
+    <script type="text/javascript">
+        function validateEmail(inputText) {
+            var mailfomat = /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
+            if (inputText.value.match(mailfomat)) {
+                document.form1.text1.focus();
+                return true;
+            }   else {
+                alert("Alamat email tidak valid!")
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
